@@ -3,6 +3,8 @@ import 'package:foodapp/controllers/cart_controller.dart';
 import 'package:foodapp/controllers/popular_product_controller.dart';
 import 'package:foodapp/controllers/recommended_product_controller.dart';
 import 'package:foodapp/data/repository/cart_repo.dart';
+import 'package:foodapp/pages/auth/sign_in_page.dart';
+import 'package:foodapp/pages/auth/sing_up_page.dart';
 import 'package:foodapp/pages/cart/cart_page.dart';
 import 'package:foodapp/pages/food/popular_food_detail.dart';
 import 'package:foodapp/pages/food/recommended_food_detail.dart';
@@ -29,7 +31,8 @@ class MyApp extends StatelessWidget {
       return GetBuilder<RecommendedProductController>(builder: (_){
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          //title: 'Flutter Demo',
+          //home: SignInPage(),
           initialRoute: RouteHelper.getSplashPage(),
           getPages: RouteHelper.routes,
         );

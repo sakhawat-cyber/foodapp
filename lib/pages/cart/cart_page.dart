@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:foodapp/base/no_data_page.dart';
+import 'package:foodapp/controllers/auth_controller.dart';
 import 'package:foodapp/controllers/cart_controller.dart';
 import 'package:foodapp/controllers/popular_product_controller.dart';
 import 'package:foodapp/controllers/recommended_product_controller.dart';
@@ -240,7 +241,12 @@ class CartPage extends StatelessWidget {
                   onTap: (){
                     //popularProduct.addItem(product);
                     //print("tapped");
-                    cartController.addToHistory();
+                    if(Get.find<AuthController>().UserLoggedIn()){
+                      print("tapped");
+                      cartController.addToHistory();
+                    }else{
+                      Get.toNamed(RouteHelper.getSignInPage());
+                    }
                   },
                   child: Container(
                     padding: EdgeInsets.only(top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20),
