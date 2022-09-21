@@ -8,6 +8,7 @@ class AppConstants{
    */
   static const String POPULAR_PRODUCT_URI = "/api/v1/products/popular";
   static const String RECOMMENDED_PROCUCT_URI = "/api/v1/products/recommended";
+  //static const String BIRYANI_URI = "/api/v1/products/biryani";
   static const String UPLOAD_URI = "/uploads/";
 
   static const String TOKEN = "DBTOKEN";
