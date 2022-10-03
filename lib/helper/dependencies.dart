@@ -20,7 +20,7 @@ Future<void> init()async {
   Get.lazyPut(() => sharedPreferences);
 
   //api client
-  Get.lazyPut(()=>ApiClient(appBaseUrl:AppConstants.BASE_URL));
+  Get.lazyPut(()=>ApiClient(appBaseUrl:AppConstants.BASE_URL, sharedPreferences: Get.find()));
   Get.lazyPut(()=>AuthRepo(apiClient: Get.find(), sharedPreferences: Get.find()));
   Get.lazyPut(()=>UserRepo(apiClient: Get.find()));
 

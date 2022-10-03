@@ -1,17 +1,19 @@
 import 'package:foodapp/utils/app_constants.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiClient extends GetConnect implements GetxService{
   late String token;
   final String appBaseUrl;
+  late SharedPreferences sharedPreferences;
 
 
   late Map<String, String> _mainHeaders;
 
-  ApiClient({required this.appBaseUrl}){
+  ApiClient({required this.appBaseUrl, required this.sharedPreferences}){
     baseUrl = appBaseUrl;
     timeout = Duration(seconds: 300);
-    token = AppConstants.TOKEN;
+    token = sharedPreferences.getString(AppConstants.TOKEN)??"";
     _mainHeaders = {
       'Content-type' : 'application/json; charset=UTF-B',
       'Authorization' : 'Bearer $token',
