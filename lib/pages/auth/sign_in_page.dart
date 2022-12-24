@@ -2,8 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:foodapp/base/custom_loader.dart';
 import 'package:foodapp/controllers/auth_controller.dart';
-import 'package:foodapp/models/signup_body_model.dart';
-import 'package:foodapp/pages/auth/sign_in_page.dart';
 import 'package:foodapp/pages/auth/sing_up_page.dart';
 import 'package:foodapp/routes/route_helper.dart';
 import 'package:foodapp/utils/colors.dart';

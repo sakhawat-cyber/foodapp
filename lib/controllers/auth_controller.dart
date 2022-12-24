@@ -38,7 +38,7 @@ class AuthController extends GetxController implements GetxService{
     if(response.statusCode==200){
      /* print("Backand Token");*/
       authRepo.saveUserToken(response.body["token"]);
-      /*print("my token is"+response.body["token"].toString());*/
+      print("my token is"+response.body["token"].toString());
       responseModel = ResponseModel(true, response.body["token"]);
     }else{
       responseModel = ResponseModel(false, response.statusText!);
@@ -52,11 +52,11 @@ class AuthController extends GetxController implements GetxService{
    authRepo.saveUserNumberAndPassword(number, password);
   }
 
-  bool UserLoggedIn()  {
+  bool userLoggedIn()  {
     return authRepo.UserLoggedIn();
   }
 
-  bool ClearShareData(){
+  bool clearShareData(){
     return authRepo.ClearShareData();
   }
 
